@@ -21,9 +21,11 @@ const Fibonacci = (x, y) => {
 
 reset.addEventListener('click', e => {
     location.reload()
-})
+});
+
 btn.addEventListener('click', e => {
     e.target.textContent = 'see more';
     Fibonacci(num1, num2);
+    nums.style.visibility = 'visible'
 });
 
