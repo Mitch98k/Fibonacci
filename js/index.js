@@ -3,6 +3,7 @@ const reset = document.querySelector('#reset');
 const btn = document.querySelector('.btn');
 const nums = document.querySelector('.nums');
 
+let count = 0;
 let num1 = 0;
 let num2 = 1;
 
@@ -24,8 +25,14 @@ reset.addEventListener('click', e => {
 });
 
 btn.addEventListener('click', e => {
+    count++;
     e.target.textContent = 'see more';
     Fibonacci(num1, num2);
-    nums.style.visibility = 'visible'
+    nums.style.visibility = 'visible';
+
+    if (count > 4) {
+        e.target.textContent = 'enough';
+        e.target.disabled = true;
+    };
 });
 
